@@ -12,7 +12,7 @@ RUN mkdir -p /var/myapp
 WORKDIR /var/myapp
 
 ADD Gemfile /var/myapp/
-#ADD Gemfile.lock /var/myapp/
+ADD Gemfile.lock /var/myapp/
 RUN bundle install
 
 ADD . /var/myapp
