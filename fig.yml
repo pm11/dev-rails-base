@@ -4,3 +4,12 @@ db:
     - "3306:3306"
   environment:
     MYSQL_ROOT_PASSWORD: password
+web:
+  build: .
+  command: bundle exec rackup -p 3000
+  volumes:
+    - .:/var/myapp
+  ports:
+    - "3000:3000"
+  links:
+    - db
