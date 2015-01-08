@@ -12,7 +12,7 @@ rails base for OSX
 ##### VirtualBox
 
 ```
-brew install virtualbox
+brew cask install virtualbox
 ```
 
 ##### boot2docker
