@@ -16,8 +16,9 @@ default: &default
   collation: utf8mb4_general_ci
   pool: 5
   username: root
-  password: 'password'
-  host: localhost
+  password: password
+  socket: /var/run/mysqld/mysqld.sock
+  host: db
 
 development:
   <<: *default
