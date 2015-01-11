@@ -40,8 +40,23 @@ http://www.fig.sh/install.html
 curl -L https://github.com/docker/fig/releases/download/1.0.1/fig-`uname -s`-`uname -m` > /usr/local/bin/fig; chmod +x /usr/local/bin/fig
 ```
 
+#### Build Conitaner
+
+```
+fig build
+```
+
+#### Database setup
+
+```
+fig run web rake db:create
+```
+
 #### Run
 
 ```
 fig up
 ```
+
+You can access `boot2docker ip` hosts.
+
