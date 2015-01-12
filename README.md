@@ -32,6 +32,13 @@ boot2docker delete
 boot2docker init
 ```
 
+Then, print Docker's environment.  
+You run boot2docker, after setting Docker's environment to your .zshrc.
+
+```
+boot2docker up
+```
+
 ##### fig
 
 http://www.fig.sh/install.html
