@@ -2,6 +2,10 @@
 
 echo "running services RAILS_ENV=$RAILS_ENV"
 
+echo "waiting running MySQL process"
+sleep 5
+
+echo "rake db:create && rake db:migrate"
 rake db:create
 rake db:migrate
 
