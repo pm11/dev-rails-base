@@ -2,10 +2,11 @@
 
 rails base for OSX
 
-* ruby
-* rails
-  * default apps
-* MySQL
+* Web Server
+  * unicorn (Rails)
+  * nginx (Proxy)
+* DB
+  * MySQL
 
 #### Preparation
 
@@ -53,12 +54,6 @@ curl -L https://github.com/docker/fig/releases/download/1.0.1/fig-`uname -s`-`un
 fig build
 ```
 
-#### Database setup
-
-```
-fig run web rake db:create
-```
-
 #### Run
 
 ```
@@ -67,3 +62,16 @@ fig up
 
 You can access `boot2docker ip` hosts.
 
+## After
+
+#### apply db:migrate
+
+```
+fig run web rake db:migrate
+```
+
+#### refresh container
+
+```
+fig stop web && fig rm --force web && fig build web && fig up web
+```
