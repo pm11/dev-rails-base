@@ -62,7 +62,7 @@ fig up
 
 You can access `boot2docker ip` hosts.
 
-## After
+## After running
 
 #### apply db:migrate
 
