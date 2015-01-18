@@ -18,7 +18,8 @@ default: &default
   username: root
   password: password
   socket: /var/run/mysqld/mysqld.sock
-  host: db
+  host: <%= ENV.fetch('DB_PORT_3306_TCP_ADDR') %>
+  port: <%= ENV.fetch('DB_PORT_3306_TCP_PORT') %>
 
 development:
   <<: *default
