@@ -3,7 +3,8 @@ FROM ruby:2.2.0
 RUN apt-get update -qq && \
     apt-get install -y \
       build-essential \
-      libpq-dev
+      libpq-dev \
+      nginx
 
 # throw errors if Gemfile has been modified since Gemfile.lock
 #RUN bundle config --global frozen 1
@@ -14,6 +15,9 @@ WORKDIR /var/myapp
 ADD Gemfile /var/myapp/
 ADD Gemfile.lock /var/myapp/
 RUN bundle install
+
+ADD config/nginx.conf /etc/nginx/sites-available/myapp
+RUN ln -s /etc/nginx/sites-available/myapp /etc/nginx/sites-enabled/myapp
 
 ADD . /var/myapp
 
